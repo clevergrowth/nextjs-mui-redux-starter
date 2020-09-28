@@ -1,0 +1,37 @@
+{
+  "presets": ["next/babel"],
+  "plugins": [
+    "inline-dotenv",
+    ["styled-components", { "ssr": true }],
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "@Actions": "./src/Actions",
+          "@Components": "./src/Components",
+          "@Containers": "./src/Containers",
+          "@Pages": "./pages",
+          "@Reducers": "./src/Reducers",
+          "@Redux": "./src/store",
+          "@Services": "./src/Services",
+          "@Static": "./public/static"
+        }
+      }
+    ]
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        [
+          "next/babel",
+          {
+            "preset-env": {
+              "modules": "commonjs"
+            }
+          }
+        ]
+      ]
+    }
+  }
+}
